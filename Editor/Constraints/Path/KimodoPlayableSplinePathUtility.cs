@@ -155,7 +155,7 @@ namespace KimodoBridge.Editor
                 }
 
                 double sampleTime = timelineClip.start + (durationSeconds * t);
-                if (!KimodoTimelineConstraintMarkerSampler.TrySampleMarker(
+                if (!KimodoTimelineConstraintSampler.TrySampleMarker(
                         context,
                         sampleTime,
                         sampleTime,

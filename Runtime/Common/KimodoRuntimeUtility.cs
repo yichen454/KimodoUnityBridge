@@ -74,7 +74,7 @@ namespace KimodoBridge
         public static ulong GetSceneHandle(Scene scene)
         {
 #if UNITY_6000_0_OR_NEWER
-            return scene.handle.GetRawData();
+            return (uint)scene.handle;
 #else
             return scene.handle >= 0 ? (ulong)scene.handle : 0UL;
 #endif

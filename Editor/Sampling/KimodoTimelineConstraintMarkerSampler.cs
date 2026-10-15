@@ -712,6 +712,25 @@ namespace KimodoBridge.Editor
 
     internal static class KimodoTimelineConstraintMarkerSampler
     {
+        internal static bool TrySampleMarker(
+            KimodoTimelineInOutConstraintContext context,
+            double timelineTime,
+            double exportedSampleTime,
+            string markerType,
+            string modelName,
+            out KimodoMarkerSampleResult sample,
+            out string error)
+        {
+            return KimodoTimelineConstraintSampler.TrySampleMarker(
+                context,
+                timelineTime,
+                exportedSampleTime,
+                markerType,
+                modelName,
+                out sample,
+                out error);
+        }
+
         private const double SeamTimeEpsilon = 1e-9;
 
         private static bool IsSameTimelineFrame(TrackAsset track, double leftTime, double rightTime)
